@@ -81,6 +81,8 @@ function gameInit() {
 
     document.querySelector('.player-0-panel').classList.remove('active', 'winner');
     document.querySelector('.player-1-panel').classList.remove('active', 'winner');
+    document.getElementById('name-0').innerText = 'Player 1';
+    document.getElementById('name-1').innerText = 'Player 2';
     document.querySelector('.player-0-panel').classList.add('active');
 
     document.getElementById('score-0').innerText = '0';
@@ -109,7 +111,7 @@ function nextPlayer() {
 
 // Sanitize input
 document.getElementById('winning-score').addEventListener('keypress', e => {
-    var key = e.which ? e.which : e.keyCode;
+    let key = e.which ? e.which : e.keyCode;
     if (key > 31 && (key < 48 || key > 57)) {
         e.preventDefault();
     }
